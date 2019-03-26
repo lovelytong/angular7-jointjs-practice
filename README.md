@@ -1,3 +1,7 @@
+#说明
+
+在Angular7中使用jointJSDemo
+
 # MyApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.6.
