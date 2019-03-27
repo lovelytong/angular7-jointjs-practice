@@ -3,10 +3,18 @@
 在Angular7中使用jointJS的Demo
 按照以下步骤安装依赖：
 
-```npm install jquery --save npm install @types/jquery --save-dev```
-`npm install backbone --save npm install @types/backbone --save-dev`
-`npm install jointjs --save npm install @types/jointjs --save-dev`
-`npm install lodash@3.10.1 --save npm install @types/lodash@3.10.1 --save-dev`
+```
+npm install jquery --save npm install @types/jquery --save-dev
+```
+```
+npm install backbone --save npm install @types/backbone --save-dev
+```
+```
+npm install jointjs --save npm install @types/jointjs --save-dev
+```
+```
+npm install lodash@3.10.1 --save npm install @types/lodash@3.10.1 --save-dev
+```
 
 在angular.json中加入以下代码,即可以在组件中使用jointJs，使用方法可参考src目录下的代码
 
@@ -23,7 +31,8 @@
               "../node_modules/jointjs/dist/joint.js"
             ],
             ...
-          }```
+          }
+```          
 
 # MyApp
 

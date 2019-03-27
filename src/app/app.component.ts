@@ -19,31 +19,43 @@ export class AppComponent implements OnInit {
   // }
 
   ngOnInit() {
-    // this.test();
+    console.log(_.chunk(['a', 'b', 'c', 'd'], 2));
+
     const graph = new joint.dia.Graph();
+
     const paper = new joint.dia.Paper({
       el: $('#paper'),
-      width: 600,
-      height: 200,
       model: graph,
+      width: 1000,
+      height: 100,
       gridSize: 1
     });
 
-    const rect = new joint.shapes.basic.Rect({
-      position: { x: 100, y: 30 },
-      size: { width: 100, height: 30 },
-      attrs: { rect: { fill: 'blue' }, text: { text: 'my box', fill: 'white' } }
+    const rect = new joint.shapes.standard.Rectangle();
+    rect.position(100, 30);
+    rect.resize(100, 40);
+    rect.attr({
+      body: {
+        fill: 'blue'
+      },
+      label: {
+        text: 'Hello',
+        fill: 'white'
+      }
     });
+    rect.addTo(graph);
 
-    const rect2 = rect.clone() as joint.shapes.basic.Rect;
-    rect2.translate(300);
+    const rect2 = rect.clone();
+    // @ts-ignore
+    rect2.translate(600, 0);
+    rect2.attr('label/text', 'World!');
+    rect2.addTo(graph);
 
-    const link = new joint.dia.Link({
-      source: { id: rect.id },
-      target: { id: rect2.id }
-    });
+    const link = new joint.shapes.standard.Link();
+    link.source(rect);
+    link.target(rect2);
+    link.addTo(graph);
 
-    graph.addCells([rect, rect2, link]);
   }
 
 }
